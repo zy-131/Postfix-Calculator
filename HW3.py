@@ -1,5 +1,3 @@
-# HW3
-# Due Date: 11/03/2019, 11:59PM
 '''
 Team members: Zaid Yazadi
               Zhuoran Han
@@ -64,7 +62,6 @@ class Stack:
     # Checks if stack is empty
     # return: - True/False (boolean)
     def isEmpty(self):
-        # YOUR CODE STARTS HERE
         if self.top:
             return False
         else:
@@ -73,7 +70,6 @@ class Stack:
     # Iterates through stack to determine length
     # return: - length of stack
     def __len__(self):
-        # YOUR CODE STARTS HERE
         cur = self.top
         length = 0
         while cur:
@@ -85,7 +81,6 @@ class Stack:
     # Parameters: value (any value)
     # return nothing
     def push(self, value):
-        # YOUR CODE STARTS HERE
         new = Node(value)
         new.next = self.top
         self.top = new
@@ -95,7 +90,6 @@ class Stack:
     # return: - None (stack is empty)
     #         - x (value of popped node)
     def pop(self):
-        # YOUR CODE STARTS HERE
         if self.isEmpty():
             return None
         else:
@@ -107,7 +101,6 @@ class Stack:
     # returns: - None(stack is empty)
     #          - top node's value
     def peek(self):
-        # YOUR CODE STARTS
         if self.isEmpty():
             return None
         return self.top.value
@@ -123,7 +116,6 @@ class Calculator:
     # Parameters: - txt (string)
     # returns: - True/False (boolean)
     def isNumber(self, txt):
-        # YOUR CODE STARTS HERE
         try:
             x = float(txt)
             return True
@@ -177,7 +169,7 @@ class Calculator:
             return None
 
         postStack=Stack()
-        # YOUR CODE STARTS HERE
+        
         if txt.count(' ') > 0:              # checks if there are 2 numbers w/o operator between them
             for i in range(len(txt) - 1):
                 if self.isNumber(txt[i]):
@@ -319,7 +311,6 @@ class Calculator:
 
         calcStack=Stack()
 
-        # YOUR CODE STARTS HERE
         expr = self.postfix(self.expr)
         if expr != 'error message':         # checks if postfix could return valid notation
             exprList = expr.split()
